@@ -264,7 +264,7 @@ const LocationBingo = () => {
                 ${
 									visited[index]
 										? "bg-gradient-to-br from-blue-500 to-blue-800 text-white shadow-lg scale-95"
-										: "bg-white text-gray-700 bg-gradient-to-br border border-blue-100 from-blue-50/90 to-blue-50/60 shadow-md hover:shadow-lg hover:scale-105"
+										: "bg-white text-gray-700 bg-gradient-to-br border border-blue-100 from-white to-blue-50/100 shadow-md hover:shadow-lg hover:scale-105"
 								}
                 ${index === 12 && !visited[index] ? "bg-yellow-100 border-2 border-yellow-400" : ""}
                 flex items-center justify-center text-center leading-tight
@@ -286,7 +286,7 @@ const LocationBingo = () => {
 				</div>
 
 				{coupon && (
-					<div className="bg-white shadow-lg p-6 rounded-lg">
+					<div className="bg-white mt-12 rounded-lg">
 						<h2 className="flex items-center gap-2 mb-4 font-bold text-xl">
 							<Gift />
 							獲得クーポン
