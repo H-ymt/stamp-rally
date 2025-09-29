@@ -103,26 +103,22 @@ const LocationBingo = () => {
 	const checkBingo = (newVisited: boolean[]) => {
 		const lines: Array<{ type: string; index: number }> = [];
 
-		// 横のライン
 		for (let i = 0; i < 5; i++) {
 			if (newVisited.slice(i * 5, i * 5 + 5).every((v: boolean) => v)) {
 				lines.push({ type: "horizontal", index: i });
 			}
 		}
 
-		// 縦のライン
 		for (let i = 0; i < 5; i++) {
 			if ([0, 1, 2, 3, 4].every((j) => newVisited[j * 5 + i])) {
 				lines.push({ type: "vertical", index: i });
 			}
 		}
 
-		// 斜め(\)
 		if ([0, 6, 12, 18, 24].every((i) => newVisited[i])) {
 			lines.push({ type: "diagonal", index: 0 });
 		}
 
-		// 斜め(/)
 		if ([4, 8, 12, 16, 20].every((i) => newVisited[i])) {
 			lines.push({ type: "diagonal", index: 1 });
 		}
@@ -131,9 +127,8 @@ const LocationBingo = () => {
 	};
 
 	const handleVisit = (index: number) => {
-		if (index === 12) return; // フリーマスは変更不可
+		if (index === 12) return;
 
-		// スクロール位置を保存
 		const scrollPosition = window.scrollY;
 
 		const newVisited = [...visited];
@@ -160,7 +155,6 @@ const LocationBingo = () => {
 			}
 		}
 
-		// スクロール位置を復元（次の描画サイクルで実行）
 		requestAnimationFrame(() => {
 			window.scrollTo(0, scrollPosition);
 		});
@@ -196,7 +190,6 @@ const LocationBingo = () => {
 
 	const visitedCount = visited.filter((v) => v).length;
 	const progress = ((visitedCount / 25) * 100).toFixed(0);
-	// const bingoCount = checkBingo(visited).length;
 
 	return (
 		<div className="px-4 py-6 min-h-screen">
@@ -209,7 +202,7 @@ const LocationBingo = () => {
 					<p className="text-gray-600">スポットを訪れてビンゴを揃えよう!</p>
 				</div>
 
-				<div className="bg-white shadow-lg mb-6 p-6 rounded-lg">
+				<div className="bg-white shadow-sm mb-6 p-6 rounded-lg">
 					<div className="flex justify-between items-center mb-4">
 						<div className="flex items-center gap-4">
 							<div className="text-center">
