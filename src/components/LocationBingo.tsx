@@ -144,7 +144,6 @@ const LocationBingo = () => {
 
 		setVisited(newVisited);
 
-		// 新しくビンゴが揃った場合(まだクーポンを持っていない場合のみ)
 		if (newLines.length > oldLines.length && newVisited[index] && !coupon) {
 			const newBingoLines = newLines.filter(
 				(nl) =>
@@ -200,7 +199,7 @@ const LocationBingo = () => {
 	// const bingoCount = checkBingo(visited).length;
 
 	return (
-		<div className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50 p-4 min-h-screen">
+		<div className="px-4 py-6 min-h-screen">
 			<div className="mx-auto max-w-2xl">
 				<div className="mb-6 text-center">
 					<h1 className="flex justify-center items-center gap-2 mb-2 font-bold text-blue-600 text-2xl">
@@ -265,7 +264,7 @@ const LocationBingo = () => {
                 ${
 									visited[index]
 										? "bg-gradient-to-br from-blue-500 to-blue-800 text-white shadow-lg scale-95"
-										: "bg-white text-gray-700 hover:shadow-md hover:scale-105"
+										: "bg-white text-gray-700 bg-gradient-to-br border border-blue-100 from-blue-50/90 to-blue-50/60 shadow-md hover:shadow-lg hover:scale-105"
 								}
                 ${index === 12 && !visited[index] ? "bg-yellow-100 border-2 border-yellow-400" : ""}
                 flex items-center justify-center text-center leading-tight
