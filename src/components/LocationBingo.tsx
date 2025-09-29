@@ -1,4 +1,4 @@
-import { Download, Gift, MapPin, Share2, Sparkles, Trophy } from "lucide-react";
+import { Download, Gift, MapPin, Share2, Trophy } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 const LocationBingo = () => {
@@ -326,6 +326,14 @@ const LocationBingo = () => {
 							>
 								閉じる
 							</button>
+						</div>
+					</div>
+				)}
+
+				{showConfetti && (
+					<div className="z-30 fixed inset-0 pointer-events-none">
+						<div className="flex justify-center items-start w-full h-full">
+							<div className="mt-10 text-4xl animate-bounce">🎊</div>
 						</div>
 					</div>
 				)}
