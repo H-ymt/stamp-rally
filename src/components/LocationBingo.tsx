@@ -331,7 +331,7 @@ const LocationBingo = () => {
 				)}
 
 				{showShareModal && (
-					<div className="z-40 fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 p-4">
+					<div className="z-40 fixed inset-0 flex justify-center items-center bg-black/60 bg-opacity-50 p-4">
 						<div className="bg-white p-8 rounded-2xl w-full max-w-md">
 							<h3 className="mb-4 font-bold text-blue-600 text-2xl">
 								進捗を共有
